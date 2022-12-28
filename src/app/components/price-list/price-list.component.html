@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <h2>Послуги</h2>
+    <ul class="mymenu nav flex-column" *ngFor="let spec of specializations; let i = index">
+        <li class="nav-item"> 
+            <a class="nav-link" href="#submenu{{i}}" data-toggle="collapse" data-target="#submenu{{i}}" aria-expanded="false">
+                <span>{{spec}}</span>
+            </a>
+            <div class="collapse show" id="submenu{{i}}" aria-expanded="false">
+                <ul class="flex-column nav" *ngFor="let item of getFavorsBySpec(spec)">
+                    <li class="nav-item">
+                        <a class="nav-link py-0">
+                            <span>{{item.favorName}}</span>
+                            <span> {{item.price}} грн</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

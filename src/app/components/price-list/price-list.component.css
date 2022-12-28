@@ -1,0 +1,28 @@
+.nav-item{
+    position:  relative;
+}
+
+.nav-link[data-toggle].collapsed:after {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f078"; 
+    color:  #7394c2;
+    right: 10px;
+    margin-left: 10px;
+}
+
+.nav-link[data-toggle]:not(.collapsed):after {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f077"; 
+    color: #7394c2;
+    right: 10px;    
+    margin-left: 10px;
+}
+
+.mymenu{
+    font-size: x-large;
+}
+span{
+    color: black;
+}
