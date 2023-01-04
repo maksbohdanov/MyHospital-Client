@@ -1,0 +1,13 @@
+#search-btn{
+    color: rgb(2, 100, 186);
+    border-color: rgb(2, 117, 216)
+}
+
+.profile{
+    width: 60%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px black solid;
+}

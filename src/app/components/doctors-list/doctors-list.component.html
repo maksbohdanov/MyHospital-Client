@@ -1,0 +1,37 @@
+<div class="container-fluid ">
+    <div class="row justify-content-center mt-5">
+        <div class="col-8">
+            <h2>Лікарі</h2>
+            <div class="row mt-4">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="ПІБ" [(ngModel)]="fullName">
+                </div>
+                <div class="col">
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="spec">
+                        <option selected>Спеціалізації</option>
+                        <option *ngFor="let item of specializations" [value]="item">
+                            {{item}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input id='search-btn' type="submit" class="form-control" value="Пошук" (click)="filter()">
+                </div>
+            </div>
+            <ng-container *ngFor="let doctor of doctors; let i = index">
+                <div class="row mt-4" *ngIf="(i%3)==0">
+                    <div class="col d-flex justify-content-center"  *ngFor="let doctor of doctors?.slice(i, i+3)">
+                        <div class='profile p-3'>
+                            <i class='fas fa-user-md mt-3' style='font-size:48px;'></i>
+                            <span>{{ doctor.lastName }} {{ doctor.firstName }} </span>
+                            <span>{{ doctor.middleName }}</span>
+                            <span style="font-size: 14px;"><i>{{ doctor.specialization }}</i></span>
+                            <span style="color: rgb(46, 185, 220);">{{ doctor.experience }} років досвіду</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </ng-container>           
+        </div>
+    </div>
+</div>

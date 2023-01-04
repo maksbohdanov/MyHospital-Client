@@ -23,7 +23,6 @@ export class PriceListComponent implements OnInit{
         this.favors = favors;
         
         let allSpec = this.favors?.map(function (item) {
-          console.log(item.specialization)
           return item.specialization;
         });     
         this.specializations = [...new Set(allSpec)]
