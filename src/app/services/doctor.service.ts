@@ -5,10 +5,13 @@ import { Doctor } from '../models/doctor.model';
 @Injectable({
   providedIn: 'root'
 })
-export class DoctorsService {
+export class DoctorService {
 
   constructor(private api: HttpClient) { }
 
+  getById(id:string){
+    return this.api.get<Doctor>('/doctors/' + id);
+  }
   getAll(){
     return this.api.get<Doctor[]>('/doctors/');
   }

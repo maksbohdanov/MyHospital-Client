@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Doctor } from 'src/app/models/doctor.model';
-import { DoctorsService } from 'src/app/services/doctors.service';
+import { DoctorService } from 'src/app/services/doctor.service';
 
 @Component({
   selector: 'app-doctors-list',
@@ -13,7 +14,8 @@ export class DoctorsListComponent implements OnInit{
   specializations?: string[];
   fullName = '';
   spec = '';
-  constructor(private doctorService: DoctorsService){}
+  constructor(private doctorService: DoctorService,
+    private router: Router){}
 
   ngOnInit(): void {
     this.getDoctors();  
@@ -31,6 +33,10 @@ export class DoctorsListComponent implements OnInit{
         });     
         this.specializations = [...new Set(allSpec)]
       });
+  }
+
+  moveToDoctorPage(id: number){
+    this.router.navigate(['doctors/' + id])
   }
 
   filter(){
