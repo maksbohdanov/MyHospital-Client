@@ -64,8 +64,8 @@ export class DoctorComponent implements OnInit, AfterViewInit{
 
   getAllDoctors(){
     this.doctorService.getAll()
-      .subscribe(doctor => {
-        this.doctors = doctor;
+      .subscribe(doctors => {
+        this.doctors = doctors;
         this.doctorNames = this.doctors.map(function (item){
           return item.lastName + ' ' + item.firstName + ' ' + item.middleName;
         });

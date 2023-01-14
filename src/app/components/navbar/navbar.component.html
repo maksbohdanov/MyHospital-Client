@@ -16,5 +16,66 @@
         </li>        
       </ul>
     </div>
-    <button class="btn btn-outline-primary me-4" type="submit">Онлайн запис</button>
+    <button class="btn btn-outline-primary me-4" type="submit"  (click)="open(content)">Онлайн запис</button>
   </nav>
+
+  
+<ng-template #content let-modal >
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Запис на прийом</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #f="ngForm">
+        <div class="form-group">
+          <label for="firstname">ПІБ</label>
+          <div class="input-group">
+            <input id="firstname" class="form-control" name="name" [(ngModel)]="form.patientName" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <div class="input-group">
+            <input id="phone" class="form-control" name="phone" placeholder="380661515155" [(ngModel)]="form.patientPhone">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Дата</label>
+          <div class="input-group">
+            <input id="date" class="form-control" name="date" type="datetime-local" [(ngModel)]="form.date">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="favor">Послуга</label>
+          <div class="input-group">
+              <select #favorsList class="form-select" name="date" aria-label="Default select example" (change)="onValueChanged(favorsList.value)" [(ngModel)]="form.favor">
+                  <option selected disabled hidden>Послуги</option>
+                  <option *ngFor="let item of favorNames" [value]="item">
+                      {{item}}
+                  </option>
+              </select>
+          </div>
+        </div>
+
+        <div class="form-group" *ngIf="checkSelectedFavor()">
+          <label for="favor">Лікар</label>
+          <div class="input-group">
+              <select class="form-select" name="doctor" aria-label="Default select example" [(ngModel)]="form.doctor">
+                  <option selected disabled hidden>Лікарі</option>
+                  <option *ngFor="let item of doctorNames" [value]="item">
+                      {{item}}
+                  </option>
+              </select>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline-dark" (click)="onSubmit()">Записатися</button>
+    </div>
+</ng-template>
