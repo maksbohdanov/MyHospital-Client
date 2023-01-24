@@ -1,27 +1,38 @@
 # MyHospitalClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+Web client for Hospital website using Angular.  
 
-## Development server
+Project represents a business card site for some hospital. It provides users with different info on hospital and it's doctors. It is also possible to make an appointment online.
+##
+You can see the design of the site in the screenshots below:  
+-main page  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![main_page](/images/1.png?raw=true)
 
-## Code scaffolding
+-favors  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![favors](/images/2.png?raw=true)
 
-## Build
+-doctors  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![doctors](/images/3.png?raw=true)  
 
-## Running unit tests
+-specialization choice  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![specialization_choice](/images/4.png?raw=true)
 
-## Running end-to-end tests
+-search by specific criteria  
+<img src="/images/5.png?raw=true" width="45%"/>
+<img src="/images/6.png?raw=true" width="45%"/>  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+-doctor page  
 
-## Further help
+![doctor](/images/7.png?raw=true)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+-appointment forms  
+<img src="/images/8.png?raw=true" width="45%" height="400px"/>
+<img src="/images/9.png?raw=true" width="45%" height="400px"/> 
+
+-submit results  
+<img src="/images/10.png?raw=true"/>
+<img src="/images/11.png?raw=true"/> 
